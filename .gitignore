@@ -2,3 +2,6 @@
 .clj-kondo/.cache
 .nrepl-port
 .cpcache
+.shadow-cljs
+node_modules
+target

@@ -96,15 +96,16 @@
             (print "_"))))
       (println))))
 
+#_
 (defn conway! [initial]
   (loop [state initial]
     (draw-grid state)
     (println "--------------")
-    (Thread/sleep 1000)
+    (Thread/sleep 10)
     (recur (next-generation state))))
 
 (comment
 
-  (conway! initial-state)
+  (conway! gosper-glider-gun)
 
   )
