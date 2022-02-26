@@ -1,7 +1,7 @@
 (ns conway.core
   (:require [clojure.set :as set]))
 
-(def initial-state
+(def glider
   {[0 1] "R"
    [1 0] "R"
    [2 0] "R"
@@ -85,6 +85,7 @@
    [(apply max (map first (keys live-cells)))
     (apply max (map second (keys live-cells)))]])
 
+#_
 (defn draw-grid [live-cells]
   (let [live-coords (set (keys live-cells))
         [[min-x min-y] [max-x max-y]] (grid-size live-cells)]
@@ -104,6 +105,7 @@
     (Thread/sleep 10)
     (recur (next-generation state))))
 
+#_
 (comment
 
   (conway! gosper-glider-gun)
