@@ -73,7 +73,7 @@
 
 (defn next-generation [live-coords]
   (let [coords-to-check (into live-coords (mapcat neighbors live-coords))]
-    (into {} (filter #(lives? live-coords %) coords-to-check))))
+    (set (filter #(lives? live-coords %) coords-to-check))))
 
 (defn grid-size [live-coords]
   [[(apply min (map first (keys live-coords)))
